@@ -19,7 +19,6 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.servlet.GuiceServletContextListener;
 
-import de.devsurf.injection.guice.DynamicModule;
 import de.devsurf.injection.guice.aop.Interceptor.InterceptorFeature;
 import de.devsurf.injection.guice.configuration.PropertiesConfigurationFeature;
 import de.devsurf.injection.guice.scanner.StartupModule;
@@ -33,8 +32,6 @@ public class GABContextListener extends GuiceServletContextListener {
 	startupModule.addFeature(PropertiesConfigurationFeature.class);
 	startupModule.addFeature(InterceptorFeature.class);
 	injector = Guice.createInjector(startupModule);
-
-	injector = Guice.createInjector(injector.getInstance(DynamicModule.class));
     }
     
 //    @Override
