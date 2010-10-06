@@ -27,10 +27,10 @@ import com.google.inject.Singleton;
 import com.google.inject.name.Named;
 
 import de.devsurf.injection.guice.aop.Intercept;
-import de.devsurf.injection.guice.scanner.annotations.AutoBind;
+import de.devsurf.injection.guice.scanner.annotations.Bind;
 
 
-@AutoBind
+@Bind
 @Path("/fixed")
 @Singleton
 public class FixedResource {

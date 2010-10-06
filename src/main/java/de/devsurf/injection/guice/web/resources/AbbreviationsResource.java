@@ -28,14 +28,14 @@ import com.google.inject.name.Named;
 
 import de.devsurf.injection.guice.aop.Intercept;
 import de.devsurf.injection.guice.configuration.Configuration;
-import de.devsurf.injection.guice.configuration.Configuration.PathType;
-import de.devsurf.injection.guice.scanner.annotations.AutoBind;
+import de.devsurf.injection.guice.configuration.Configuration.PathConfig;
+import de.devsurf.injection.guice.scanner.annotations.Bind;
 
 
 @Path("/abb")
 @Singleton
-@AutoBind
-@Configuration(name="abbreviations", path="/abbreviations.properties", pathType=PathType.CLASSPATH, lazy=true)
+@Bind
+@Configuration(name=@Named("abbreviations"), path=@PathConfig(location = "/abbreviations.properties"), lazy=true)
 public class AbbreviationsResource {
     
     @Inject

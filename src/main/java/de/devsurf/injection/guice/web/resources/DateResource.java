@@ -22,10 +22,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
 import de.devsurf.injection.guice.aop.Intercept;
-import de.devsurf.injection.guice.scanner.annotations.AutoBind;
+import de.devsurf.injection.guice.scanner.annotations.Bind;
 
 
-@AutoBind
+@Bind
 @Path("/date")
 public class DateResource {
     @GET

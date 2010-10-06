@@ -22,10 +22,10 @@ import javax.ws.rs.Produces;
 import com.google.inject.Singleton;
 
 import de.devsurf.injection.guice.aop.Intercept;
-import de.devsurf.injection.guice.scanner.annotations.AutoBind;
+import de.devsurf.injection.guice.scanner.annotations.Bind;
 
 
-@AutoBind
+@Bind
 @Path("/")
 @Singleton
 public class ListResource {
@@ -34,6 +34,6 @@ public class ListResource {
     @Produces("text/html")
     @Intercept
     public String getAnswer(){
-	return "<html><head/><body><a href='fixed/view.html'>fixed</a><br/><a href='date/view.html'>date</a><br/><a href='abb/gab.html'>abbreviations</a><br/></body></html>";
+	return "<html><head/><body><a href='fixed/view.html'>fixed</a><br/><a href='date/view.html'>date</a><br/><a href='abb/gab.html'>abbreviations</a><br/><a href='jackson/daniel'>jackson</a><br/></body></html>";
     }
 }

@@ -31,6 +31,7 @@ public class GABContextListener extends GuiceServletContextListener {
 	StartupModule startupModule = StartupModule.create(ASMClasspathScanner.class, "de.devsurf");
 	startupModule.addFeature(PropertiesConfigurationFeature.class);
 	startupModule.addFeature(InterceptorFeature.class);
+	
 	injector = Guice.createInjector(startupModule);
     }
     
