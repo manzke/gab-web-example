@@ -26,7 +26,7 @@ import de.devsurf.injection.guice.scanner.annotations.Bind;
 
 
 @Bind
-@Path("/")
+@Path("/list")
 @Singleton
 public class ListResource {
     

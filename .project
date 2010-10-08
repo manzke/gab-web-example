@@ -40,5 +40,6 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>com.genuitec.eclipse.j2eedt.core.webnature</nature>
 		<nature>org.maven.ide.eclipse.maven2Nature</nature>
+		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
 </projectDescription>

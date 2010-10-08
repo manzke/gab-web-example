@@ -23,31 +23,32 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
 
 import de.devsurf.injection.guice.aop.Intercept;
 import de.devsurf.injection.guice.configuration.Configuration;
-import de.devsurf.injection.guice.configuration.Configuration.PathConfig;
+import de.devsurf.injection.guice.configuration.PathConfig;
 import de.devsurf.injection.guice.scanner.annotations.Bind;
 
 
 @Path("/abb")
 @Singleton
 @Bind
-@Configuration(name=@Named("abbreviations"), path=@PathConfig(location = "/abbreviations.properties"), lazy=true)
+@Configuration(name=@Named("abbreviations"), location=@PathConfig(path = "/abbreviations.properties"), lazy=true)
 public class AbbreviationsResource {
     
     @Inject
     @Named("abbreviations")
-    Properties config;
+    Provider<Properties> config;
         
     @GET
     @Path("{parameter}.html")
     @Produces("text/html")
     @Intercept
     public String getAnswer(@PathParam("parameter") String parameter){
-	return "<html><head/><body>The Value for the Key \""+parameter+"\" is \""+config.getProperty(parameter)+"\"";
+	return "<html><head/><body>The Value for the Key \""+parameter+"\" is \""+config.get().getProperty(parameter)+"\"";
     }
  
 }
